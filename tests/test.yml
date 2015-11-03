@@ -1,0 +1,7 @@
+---
+# test file for postgresql_db
+
+- hosts: localhost
+  remote_user: root
+  roles:
+    - ansible-role-postgresql-db

@@ -1,0 +1,11 @@
+---
+# roles file for postgresql_db
+
+- src: https://github.com/pantarei/ansible-role-apt
+  name: apt
+
+- src: https://github.com/pantarei/ansible-role-postgresql
+  name: postgresql
+
+- src: https://github.com/pantarei/ansible-role-postgresql-db
+  name: postgresql_db

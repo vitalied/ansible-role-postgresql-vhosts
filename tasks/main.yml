@@ -1,0 +1,12 @@
+---
+# tasks file for postgresql_db
+
+- name: create postgresql db
+  become: yes
+  become_user: postgres
+  postgresql_db:
+    name={{ postgresql_db_name }}
+    owner={{ postgresql_db_owner }}
+    encoding={{ postgresql_db_encoding }}
+    template={{ postgresql_db_template }}
+  tags: postgresql
