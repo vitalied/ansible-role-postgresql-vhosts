@@ -1,12 +1,10 @@
-PostgreSQL Database
-===================
+Ansible Role for PostgreSQL Database
+====================================
 
-[![Build
-Status](https://travis-ci.org/pantarei/ansible-role-postgresql-db.svg?branch=master)](https://travis-ci.org/pantarei/ansible-role-postgresql-db)
-[![GitHub
-tag](https://img.shields.io/github/tag/pantarei/ansible-role-postgresql-db.svg)](https://github.com/pantarei/ansible-role-postgresql-db)
-[![GitHub
-license](https://img.shields.io/github/license/pantarei/ansible-role-postgresql-db.svg)](https://github.com/pantarei/ansible-role-postgresql-db)
+[![Build Status](https://travis-ci.org/pantarei/ansible-role-postgresql-db.svg?branch=master)](https://travis-ci.org/pantarei/ansible-role-postgresql-db)
+[![GitHub tag](https://img.shields.io/github/tag/pantarei/ansible-role-postgresql-db.svg)](https://github.com/pantarei/ansible-role-postgresql-db)
+[![GitHub license](https://img.shields.io/github/license/pantarei/ansible-role-postgresql-db.svg)](https://github.com/pantarei/ansible-role-postgresql-db/blob/master/LICENSE)
+[![Ansible Role](https://img.shields.io/ansible/role/5982.svg)](https://galaxy.ansible.com/detail#/role/5982)
 
 Ansible Role for PostgreSQL Database Management.
 
@@ -20,36 +18,73 @@ This role was designed for Ubuntu Server 14.04 LTS.
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here,
-including any variables that are in defaults/main.yml, vars/main.yml,
-and any variables that can/should be set via parameters to the role. Any
-variables that are read from other roles and/or the global scope (ie.
-hostvars, group vars, etc.) should be mentioned here as well.
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">parameter</th>
+<th align="left">required</th>
+<th align="left">default</th>
+<th align="left">choices</th>
+<th align="left">comments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">postgresql_db_encoding</td>
+<td align="left">yes</td>
+<td align="left">UTF8</td>
+<td align="left"></td>
+<td align="left">Pass value as <code>encoding</code> to <a href="http://docs.ansible.com/ansible/postgresql_db_module.html">postgresql_db module</a>.</td>
+</tr>
+<tr class="even">
+<td align="left">postgresql_db_name</td>
+<td align="left">yes</td>
+<td align="left">example</td>
+<td align="left"></td>
+<td align="left">Pass value as <code>name</code> to <a href="http://docs.ansible.com/ansible/postgresql_db_module.html">postgresql_db module</a>.</td>
+</tr>
+<tr class="odd">
+<td align="left">postgresql_db_owner</td>
+<td align="left">yes</td>
+<td align="left">example</td>
+<td align="left"></td>
+<td align="left">Pass value as <code>owner</code> to <a href="http://docs.ansible.com/ansible/postgresql_db_module.html">postgresql_db module</a>.</td>
+</tr>
+<tr class="even">
+<td align="left">postgresql_db_template</td>
+<td align="left">yes</td>
+<td align="left">template0</td>
+<td align="left"></td>
+<td align="left">Pass value as <code>template</code> to <a href="http://docs.ansible.com/ansible/postgresql_db_module.html">postgresql_db module</a>.</td>
+</tr>
+</tbody>
+</table>
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details
-in regards to parameters that may need to be set for other roles, or
-variables that are used from other roles.
+-   [hswong3i.postgresql\_user](https://galaxy.ansible.com/detail#/role/5981)
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with
-variables passed in as parameters) is always nice for users too:
-
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+        - { role: hswong3i.postgresql_user, postgresql_user_name: 'example', postgresql_user_password: 'kaiS9eik' }
+        - { role: hswong3i.postgresql_db, postgresql_db_name: 'example', postgresql_db_owner: 'example' }
 
 License
 -------
 
--   Code released under
-    [MIT](https://github.com/hswong3i/ansible-role-postgresql-db/blob/master/LICENSE)
--   Docs released under [CC BY
-    4.0](http://creativecommons.org/licenses/by/4.0/)
+-   Code released under [MIT](https://github.com/hswong3i/ansible-role-postgresql-db/blob/master/LICENSE)
+-   Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 
 Author Information
 ------------------
