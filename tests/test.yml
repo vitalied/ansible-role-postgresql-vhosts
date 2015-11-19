@@ -1,5 +1,5 @@
 ---
-# test file for postgresql_db
+# test file for hswong3i.postgresql_db
 
 - hosts: localhost
   remote_user: root

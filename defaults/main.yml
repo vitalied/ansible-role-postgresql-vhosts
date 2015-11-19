@@ -1,5 +1,5 @@
 ---
-# defaults file for postgresql_db
+# defaults file for hswong3i.postgresql_db
 
 postgresql_db_encoding: UTF8
 postgresql_db_name: example
