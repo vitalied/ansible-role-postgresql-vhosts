@@ -9,4 +9,4 @@
     owner="{{ postgresql_db_owner }}"
     encoding="{{ postgresql_db_encoding }}"
     template="{{ postgresql_db_template }}"
-  tags: postgresql_db
+  tags: hswong3i.postgresql_db
