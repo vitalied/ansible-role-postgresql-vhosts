@@ -70,7 +70,7 @@ Role Variables
 Dependencies
 ------------
 
--   [hswong3i.postgresql\_user](https://galaxy.ansible.com/detail#/role/5981)
+-   [hswong3i.postgresql\_user](https://github.com/pantarei/ansible-role-postgresql-user)
 
 Example Playbook
 ----------------
@@ -82,7 +82,7 @@ Example Playbook
 License
 -------
 
--   Code released under [MIT](https://github.com/hswong3i/ansible-role-postgresql-db/blob/master/LICENSE)
+-   Code released under [MIT](https://github.com/pantarei/ansible-role-postgresql-db/blob/master/LICENSE)
 -   Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 
 Author Information
