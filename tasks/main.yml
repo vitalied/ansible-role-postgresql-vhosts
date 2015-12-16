@@ -8,5 +8,7 @@
     name="{{ postgresql_db_name }}"
     owner="{{ postgresql_db_owner }}"
     encoding="{{ postgresql_db_encoding }}"
+    lc_collate="{{ postgresql_db_lc_collate }}"
+    lc_ctype="{{ postgresql_db_lc_ctype }}"
     template="{{ postgresql_db_template }}"
   tags: hswong3i.postgresql_db
