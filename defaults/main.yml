@@ -2,7 +2,7 @@
 # defaults file for hswong3i.postgresql_db
 
 postgresql_db_encoding: UTF8
-postgresql_db_lc_collate: en_Us.UTF-8
+postgresql_db_lc_collate: en_US.UTF-8
 postgresql_db_lc_ctype: en_US.UTF-8
 postgresql_db_name: example
 postgresql_db_owner: example
