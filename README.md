@@ -44,6 +44,20 @@ Role Variables
 <td align="left">Pass value as <code>encoding</code> to <a href="http://docs.ansible.com/ansible/postgresql_db_module.html">postgresql_db module</a>.</td>
 </tr>
 <tr class="even">
+<td align="left">postgresql_db_lc_collate</td>
+<td align="left">yes</td>
+<td align="left">en_US.UTF-8</td>
+<td align="left"></td>
+<td align="left">Pass value as <code>lc_collate</code> to <a href="http://docs.ansible.com/ansible/postgresql_db_module.html">postgresql_db module</a>.</td>
+</tr>
+<tr class="odd">
+<td align="left">postgresql_db_lc_ctype</td>
+<td align="left">yes</td>
+<td align="left">en_US.UTF-8</td>
+<td align="left"></td>
+<td align="left">Pass value as <code>lc_ctype</code> to <a href="http://docs.ansible.com/ansible/postgresql_db_module.html">postgresql_db module</a>.</td>
+</tr>
+<tr class="even">
 <td align="left">postgresql_db_name</td>
 <td align="left">yes</td>
 <td align="left">example</td>
