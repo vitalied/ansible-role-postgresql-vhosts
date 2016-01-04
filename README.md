@@ -65,13 +65,6 @@ Role Variables
 <td align="left">Pass value as <code>name</code> to <a href="http://docs.ansible.com/ansible/postgresql_db_module.html">postgresql_db module</a>.</td>
 </tr>
 <tr class="odd">
-<td align="left">postgresql_db_owner</td>
-<td align="left">yes</td>
-<td align="left">example</td>
-<td align="left"></td>
-<td align="left">Pass value as <code>owner</code> to <a href="http://docs.ansible.com/ansible/postgresql_db_module.html">postgresql_db module</a>.</td>
-</tr>
-<tr class="even">
 <td align="left">postgresql_db_template</td>
 <td align="left">yes</td>
 <td align="left">template0</td>
@@ -84,14 +77,14 @@ Role Variables
 Dependencies
 ------------
 
--   [hswong3i.postgresql\_user](https://github.com/pantarei/ansible-role-postgresql-user)
+No additional role dependencies.
 
 Example Playbook
 ----------------
 
     - hosts: servers
       roles:
-        - { role: hswong3i.postgresql_db, postgresql_db_name: 'example', postgresql_db_owner: 'example' }
+        - { role: hswong3i.postgresql_db, postgresql_db_name: 'example' }
 
 License
 -------
