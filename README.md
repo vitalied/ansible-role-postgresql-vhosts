@@ -2,9 +2,9 @@ Ansible Role for PostgreSQL Database
 ====================================
 
 [![Build Status](https://travis-ci.org/pantarei/ansible-role-postgresql-db.svg?branch=master)](https://travis-ci.org/pantarei/ansible-role-postgresql-db)
- [![GitHub tag](https://img.shields.io/github/tag/pantarei/ansible-role-postgresql-db.svg)](https://github.com/pantarei/ansible-role-postgresql-db)
- [![GitHub license](https://img.shields.io/github/license/pantarei/ansible-role-postgresql-db.svg)](https://github.com/pantarei/ansible-role-postgresql-db/blob/master/LICENSE)
- [![Ansible Role](https://img.shields.io/ansible/role/5982.svg)](https://galaxy.ansible.com/detail#/role/5982)
+[![GitHub tag](https://img.shields.io/github/tag/pantarei/ansible-role-postgresql-db.svg)](https://github.com/pantarei/ansible-role-postgresql-db)
+[![GitHub license](https://img.shields.io/github/license/pantarei/ansible-role-postgresql-db.svg)](https://github.com/pantarei/ansible-role-postgresql-db/blob/master/LICENSE)
+[![Ansible Role](https://img.shields.io/ansible/role/5982.svg)](https://galaxy.ansible.com/detail#/role/5982)
 
 Ansible Role for PostgreSQL Database Management.
 
