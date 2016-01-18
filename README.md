@@ -53,7 +53,7 @@ Role Variables
 <tr class="odd">
 <td align="left">postgresql_vhosts_password</td>
 <td align="left">yes</td>
-<td align="left">kaiS9eik</td>
+<td align="left">xaivoo9Z</td>
 <td align="left"></td>
 <td align="left">Pass value as <code>password</code> to <a href="http://docs.ansible.com/ansible/postgresql_user_module.html">postgresql_user module</a>.</td>
 </tr>
