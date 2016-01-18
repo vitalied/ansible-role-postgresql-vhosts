@@ -1,13 +1,27 @@
 ---
-# tasks file for hswong3i.postgresql_db
+# tasks file for hswong3i.postgresql_vhosts
 
 - name: create postgresql db
   become: yes
   become_user: postgres
   postgresql_db:
-    name="{{ postgresql_db_name }}"
-    encoding="{{ postgresql_db_encoding }}"
-    lc_collate="{{ postgresql_db_lc_collate }}"
-    lc_ctype="{{ postgresql_db_lc_ctype }}"
-    template="{{ postgresql_db_template }}"
-  tags: hswong3i.postgresql_db
+    name="{{ postgresql_vhosts_id }}"
+    encoding="{{ postgresql_vhosts_encoding }}"
+    lc_collate="{{ postgresql_vhosts_lc_collate }}"
+    lc_ctype="{{ postgresql_vhosts_lc_ctype }}"
+    template="{{ postgresql_vhosts_template }}"
+  tags: hswong3i.postgresql_vhosts
+
+- name: create postgresql user
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    name="{{ postgresql_vhosts_user }}"
+    password="{{ postgresql_vhosts_pass }}"
+    db="{{ postgresql_vhosts_id }}"
+    priv="{{ item[0] }}"
+    role_attr_flags="{{ item[1] }}"
+  with_nested:
+    - "{{ postgresql_vhosts_priv }}"
+    - "{{ postgresql_vhosts_role_attr_flags }}"
+  tags: hswong3i.postgresql_vhosts
