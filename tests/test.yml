@@ -1,8 +1,8 @@
 ---
-# test file for hswong3i.postgresql_db
+# test file for hswong3i.postgresql_vhosts
 
 - hosts: localhost
   remote_user: root
   roles:
     - hswong3i.postgresql
-    - ansible-role-postgresql-db
+    - ansible-role-postgresql-vhosts

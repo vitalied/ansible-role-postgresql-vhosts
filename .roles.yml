@@ -1,5 +1,4 @@
 ---
-# roles file for hswong3i.postgresql_db
+# roles file for hswong3i.postgresql_vhosts
 
 - src: hswong3i.postgresql
-- src: hswong3i.postgresql_db
