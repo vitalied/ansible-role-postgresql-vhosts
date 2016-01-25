@@ -86,18 +86,11 @@ Role Variables
 <td align="left">Pass value as <code>template</code> to <a href="http://docs.ansible.com/ansible/postgresql_db_module.html">postgresql_db module</a>.</td>
 </tr>
 <tr class="even">
-<td align="left">postgresql_vhosts_priv</td>
+<td align="left">postgresql_vhosts_privs</td>
 <td align="left">yes</td>
 <td align="left"><a href="https://github.com/pantarei/ansible-role-postgresql-vhosts/blob/master/defaults/main.yml">defaults/main.yml</a></td>
 <td align="left"></td>
-<td align="left">Pass value as <code>priv</code> to <a href="http://docs.ansible.com/ansible/postgresql_user_module.html">postgresql_user module</a>.</td>
-</tr>
-<tr class="odd">
-<td align="left">postgresql_vhosts_role_attr_flags</td>
-<td align="left">yes</td>
-<td align="left"><a href="https://github.com/pantarei/ansible-role-postgresql-vhosts/blob/master/defaults/main.yml">defaults/main.yml</a></td>
-<td align="left"></td>
-<td align="left">Pass value as <code>role_attr_flags</code> to <a href="http://docs.ansible.com/ansible/postgresql_user_module.html">postgresql_user module</a>.</td>
+<td align="left">Pass value to <a href="http://docs.ansible.com/ansible/postgresql_user_module.html">postgresql_user module</a>.</td>
 </tr>
 </tbody>
 </table>

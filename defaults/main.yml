@@ -8,10 +8,7 @@ postgresql_vhosts_encoding: UTF8
 postgresql_vhosts_lc_collate: en_US.UTF-8
 postgresql_vhosts_lc_ctype: en_US.UTF-8
 postgresql_vhosts_template: template0
-postgresql_vhosts_priv: [
-  'ALL',
-]
-postgresql_vhosts_role_attr_flags: [
-  'NOSUPERUSER',
-  'NOCREATEDB',
+postgresql_vhosts_privs: [
+  { priv: 'ALL', role_attr_flags: 'NOSUPERUSER' },
+  { priv: 'ALL', role_attr_flags: 'NOCREATEDB' },
 ]
