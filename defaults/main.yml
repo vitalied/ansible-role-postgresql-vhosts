@@ -1,16 +1,20 @@
 ---
 # defaults file for vitalied.postgresql-vhosts
 
-# required variables
-postgresql_vhosts_id: ~
-postgresql_vhosts_user: ~
-postgresql_vhosts_pass: ~
+postgresql_vhosts_db: example
+postgresql_vhosts_user: example
+postgresql_vhosts_pass: example
 
-# optional variables with default
-postgresql_vhosts_encoding: "UTF8"
-postgresql_vhosts_lc_collate: "en_US.UTF-8"
-postgresql_vhosts_lc_ctype: "en_US.UTF-8"
-postgresql_vhosts_template: "template0"
-postgresql_vhosts_privs: [
-  { priv: "ALL", role_attr_flags: "SUPERUSER" },
-]
+postgresql_vhosts_encoding: UTF8
+postgresql_vhosts_lc_collate: en_US.UTF-8
+postgresql_vhosts_lc_ctype: en_US.UTF-8
+
+postgresql_vhosts_template: template0
+
+postgresql_vhosts_privs: ALL
+postgresql_vhosts_role_attr_flags: 'NOSUPERUSER,INHERIT,NOCREATEDB,NOCREATEROLE,NOREPLICATION'
+
+postgresql_vhosts_extensions:
+  - hstore
+  - uuid-ossp
+  - citext
