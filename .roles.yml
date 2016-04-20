@@ -1,0 +1,6 @@
+---
+# roles file for vitalied.postgresql-vhosts
+
+- src: vitalied.postgresql
+
+- src: vitalied.postgresql-vhosts

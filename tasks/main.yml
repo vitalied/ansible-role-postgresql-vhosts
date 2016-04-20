@@ -1,5 +1,5 @@
 ---
-# tasks file for hswong3i.postgresql_vhosts
+# tasks file for vitalied.postgresql-vhosts
 
 - name: create postgresql user
   become: yes

@@ -1,5 +1,5 @@
 ---
-# defaults file for hswong3i.postgresql_vhosts
+# defaults file for vitalied.postgresql-vhosts
 
 # required variables
 postgresql_vhosts_id: ~
