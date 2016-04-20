@@ -1,33 +1,33 @@
 ---
 # tasks file for vitalied.postgresql-vhosts
 
-- name: create postgresql user
-  become: yes
-  become_user: postgres
-  postgresql_user:
-    name: "{{ postgresql_vhosts_user }}"
-    password: "{{ postgresql_vhosts_pass }}"
-  when: postgresql_vhosts_pass is string
-  tags: hswong3i.postgresql_vhosts
-
 - name: create postgresql db
   become: yes
   become_user: postgres
   postgresql_db:
-    name: "{{ postgresql_vhosts_id }}"
-    encoding: "{{ postgresql_vhosts_encoding }}"
-    lc_collate: "{{ postgresql_vhosts_lc_collate }}"
-    lc_ctype: "{{ postgresql_vhosts_lc_ctype }}"
-    template: "{{ postgresql_vhosts_template }}"
-  tags: hswong3i.postgresql_vhosts
+    name={{ postgresql_vhosts_db }}
+    encoding={{ postgresql_vhosts_encoding }}
+    lc_collate={{ postgresql_vhosts_lc_collate }}
+    lc_ctype={{ postgresql_vhosts_lc_ctype }}
+    template={{ postgresql_vhosts_template }}
+  tags: vitalied.postgresql-vhosts
 
-- name: append privs for postgresql user
+- name: create postgresql user
   become: yes
   become_user: postgres
   postgresql_user:
-    name: "{{ postgresql_vhosts_user }}"
-    db: "{{ postgresql_vhosts_id }}"
-    priv: "{{ item.priv }}"
-    role_attr_flags: "{{ item.role_attr_flags }}"
-  with_items: "{{ postgresql_vhosts_privs }}"
-  tags: hswong3i.postgresql_vhosts
+    name={{ postgresql_vhosts_user }}
+    password={{ postgresql_vhosts_pass }}
+    db={{ postgresql_vhosts_db }}
+    priv={{ postgresql_vhosts_privs }}
+    role_attr_flags={{ postgresql_vhosts_role_attr_flags }}
+  tags: vitalied.postgresql-vhosts
+
+- name: create postgresql db extensions
+  become: yes
+  become_user: postgres
+  postgresql_ext:
+    name={{ item }}
+    db={{ postgresql_vhosts_db }}
+  with_items: '{{ postgresql_vhosts_extensions }}'
+  tags: vitalied.postgresql-vhosts
