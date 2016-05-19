@@ -36,32 +36,18 @@ Role Variables
 </thead>
 <tbody>
 <tr class="odd">
-<td>postgresql_vhosts_id</td>
-<td>yes</td>
-<td>example</td>
-<td></td>
-<td>Unique ID for virtual host shared among other services.</td>
-</tr>
-<tr class="even">
-<td>postgresql_vhosts_name</td>
-<td>yes</td>
-<td>example</td>
-<td></td>
-<td>Pass value as <code>name</code> to <a href="http://docs.ansible.com/ansible/postgresql_user_module.html">postgresql_user module</a>.</td>
-</tr>
-<tr class="odd">
-<td>postgresql_vhosts_password</td>
-<td>yes</td>
-<td>xaivoo9Z</td>
-<td></td>
-<td>Pass value as <code>password</code> to <a href="http://docs.ansible.com/ansible/postgresql_user_module.html">postgresql_user module</a>.</td>
-</tr>
-<tr class="even">
 <td>postgresql_vhosts_encoding</td>
 <td>yes</td>
 <td>UTF8</td>
 <td></td>
 <td>Pass value as <code>encoding</code> to <a href="http://docs.ansible.com/ansible/postgresql_db_module.html">postgresql_db module</a>.</td>
+</tr>
+<tr class="even">
+<td>postgresql_vhosts_id</td>
+<td>yes</td>
+<td>example</td>
+<td></td>
+<td>Unique ID for virtual host shared among other services.</td>
 </tr>
 <tr class="odd">
 <td>postgresql_vhosts_lc_collate</td>
@@ -78,18 +64,32 @@ Role Variables
 <td>Pass value as <code>lc_ctype</code> to <a href="http://docs.ansible.com/ansible/postgresql_db_module.html">postgresql_db module</a>.</td>
 </tr>
 <tr class="odd">
-<td>postgresql_vhosts_template</td>
+<td>postgresql_vhosts_name</td>
 <td>yes</td>
-<td>template0</td>
+<td>example</td>
 <td></td>
-<td>Pass value as <code>template</code> to <a href="http://docs.ansible.com/ansible/postgresql_db_module.html">postgresql_db module</a>.</td>
+<td>Pass value as <code>name</code> to <a href="http://docs.ansible.com/ansible/postgresql_user_module.html">postgresql_user module</a>.</td>
 </tr>
 <tr class="even">
+<td>postgresql_vhosts_password</td>
+<td>yes</td>
+<td>xaivoo9Z</td>
+<td></td>
+<td>Pass value as <code>password</code> to <a href="http://docs.ansible.com/ansible/postgresql_user_module.html">postgresql_user module</a>.</td>
+</tr>
+<tr class="odd">
 <td>postgresql_vhosts_privs</td>
 <td>yes</td>
 <td><a href="https://github.com/pantarei/ansible-role-postgresql-vhosts/blob/master/defaults/main.yml">defaults/main.yml</a></td>
 <td></td>
 <td>Pass value to <a href="http://docs.ansible.com/ansible/postgresql_user_module.html">postgresql_user module</a>.</td>
+</tr>
+<tr class="even">
+<td>postgresql_vhosts_template</td>
+<td>yes</td>
+<td>template0</td>
+<td></td>
+<td>Pass value as <code>template</code> to <a href="http://docs.ansible.com/ansible/postgresql_db_module.html">postgresql_db module</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -102,9 +102,12 @@ No additional role dependencies.
 Example Playbook
 ----------------
 
-    - hosts: servers
+    - hosts: all
       roles:
-        - { role: hswong3i.postgresql_vhosts, postgresql_vhosts_id: 'example', postgresql_vhosts_name: 'example' }
+        - role: hswong3i.postgresql_vhosts
+          postgresql_vhosts_id: "example"
+          postgresql_vhosts_pass: "xaivoo9Z"
+          postgresql_vhosts_user: "example"
 
 License
 -------
