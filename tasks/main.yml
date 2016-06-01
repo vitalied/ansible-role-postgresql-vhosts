@@ -1,6 +1,15 @@
 ---
 # tasks file for hswong3i.postgresql_vhosts
 
+- name: create postgresql user
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    name: "{{ postgresql_vhosts_user }}"
+    password: "{{ postgresql_vhosts_pass }}"
+  when: postgresql_vhosts_pass is string
+  tags: hswong3i.postgresql_vhosts
+
 - name: create postgresql db
   become: yes
   become_user: postgres
@@ -12,12 +21,11 @@
     template: "{{ postgresql_vhosts_template }}"
   tags: hswong3i.postgresql_vhosts
 
-- name: create postgresql user
+- name: append privs for postgresql user
   become: yes
   become_user: postgres
   postgresql_user:
     name: "{{ postgresql_vhosts_user }}"
-    password: "{{ postgresql_vhosts_pass }}"
     db: "{{ postgresql_vhosts_id }}"
     priv: "{{ item.priv }}"
     role_attr_flags: "{{ item.role_attr_flags }}"
