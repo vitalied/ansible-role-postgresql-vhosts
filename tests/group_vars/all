@@ -1,3 +1,4 @@
+---
 postgresql_vhosts_id: "example"
 postgresql_vhosts_pass: "xaivoo9Z"
 postgresql_vhosts_user: "example"
